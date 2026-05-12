@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random đề thi thử môn Tin Học</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">💻 Tin Học THPT</p>
+        <h1>Random đề thi thử môn Tin Học</h1>
+        <p class="subtitle">Chọn nhanh một đề luyện tập, lưu tiến độ đã làm và đánh dấu đề yêu thích ngay trên trình duyệt.</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Chuyển chế độ giao diện">
+        🌙 Dark Mode
+      </button>
+    </header>
+
+    <main>
+      <section class="hero-panel" aria-labelledby="randomTitle">
+        <div class="hero-copy">
+          <p class="section-kicker">🎲 Random đề</p>
+          <h2 id="randomTitle">Sẵn sàng luyện tập?</h2>
+          <p>Bấm nút bên dưới để hệ thống chọn ngẫu nhiên một đề thi thử môn Tin Học cho bạn.</p>
+        </div>
+        <button class="primary-button" id="randomButton" type="button">
+          🎲 Random đề thi
+        </button>
+      </section>
+
+      <section class="result-section" id="randomResult" aria-live="polite"></section>
+
+      <section class="stats-section" aria-labelledby="statsTitle">
+        <div class="section-heading">
+          <p class="section-kicker">📊 Thống kê</p>
+          <h2 id="statsTitle">Tiến độ luyện đề</h2>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Tổng số đề thi</span>
+            <strong id="totalCount">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Số đề Azota</span>
+            <strong id="azotaCount">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Số đề đã làm</span>
+            <strong id="completedCount">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Số đề chưa làm</span>
+            <strong id="pendingCount">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Số đề yêu thích</span>
+            <strong id="favoriteCount">0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="exam-section" aria-labelledby="examListTitle">
+        <div class="section-heading">
+          <p class="section-kicker">📚 Danh sách đề thi</p>
+          <h2 id="examListTitle">Chọn đề có sẵn</h2>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box" for="searchInput">
+            <span>🔎</span>
+            <input id="searchInput" type="search" placeholder="Tìm theo tên hoặc mô tả đề..." autocomplete="off">
+          </label>
+
+          <div class="filter-group" role="group" aria-label="Bộ lọc đề thi">
+            <button class="filter-button active" type="button" data-filter="all">Tất cả</button>
+            <button class="filter-button" type="button" data-filter="azota">Azota</button>
+            <button class="filter-button" type="button" data-filter="completed">Đã làm</button>
+            <button class="filter-button" type="button" data-filter="pending">Chưa làm</button>
+            <button class="filter-button" type="button" data-filter="favorite">Yêu thích</button>
+          </div>
+        </div>
+
+        <div class="exam-grid" id="examList"></div>
+        <p class="empty-message hidden" id="emptyMessage">Không tìm thấy đề thi phù hợp.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong>Tác giả:</strong> Trương Minh Khiêm</p>
+      <p>Lớp 12A6</p>
+      <p>Trường THPT Võ Văn Kiệt</p>
+      <p>Tỉnh Cà Mau</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
